@@ -7,10 +7,10 @@ Copyright © 2025 FALCONS.AI. All rights reserved.
     <img src="assets/fai_gradient_logo.png" alt="Logo" >
 </div>
 
+
+
 ## Overview
-This repo is designed as a fast start to any developer to build a personal NSFW content detection solution. The Flask-based web application demonstrates real-time NSFW (Not Safe For Work) image detection using FALCONS.AI's open-source #1 NSFW classification model, available on HuggingFace. The application provides automatic content moderation with visual feedback, leveraging state-of-the-art machine learning for accurate and efficient image classification. Once the 1st run has completed, this can be used completely offline to alleviate any data privacy concerns. All functionality and data storage remains local to the system its being run on and nothing is sent out anywhere.
-
-
+This repo is designed as a fast start to any developer to build a personal NSFW content detection solution. The Flask-based web application demonstrates real-time NSFW (Not Safe For Work) image detection using FALCONS.AI's open-source #1 NSFW classification model, available on HuggingFace, leading the community with a staggering <span style="font-size: 1.5em;">80 MILLION downloads!</span> The application provides automatic content moderation with visual feedback, leveraging state-of-the-art machine learning for accurate and efficient image classification. Once the 1st run has completed, this can be used completely offline to alleviate any data privacy concerns. All functionality and data storage remains local to the system its being run on and nothing is sent out anywhere.
 
 
 ## Simple UI
