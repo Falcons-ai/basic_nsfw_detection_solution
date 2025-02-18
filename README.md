@@ -59,9 +59,9 @@ The application utilizes FALCONS.AI's #! NSFW classification model, which offers
 ├── static/
 │   └── css/
         └── style.css   # Custom styles
-        └── bootstrap.min.css   # Custom styles
+        └── bootstrap.min.css   # Bootstrap styles
     └── js/
-        └── bootstrap.bundle.min.js   # Custom styles
+        └── bootstrap.bundle.min.js   # Bootstrap javascript
 └── templates/
     └── index.html      # Main template
 ```
@@ -201,7 +201,7 @@ nsfw_image2.png,"Another caption",2025-02-18T14:35:00
 
 For technical assistance or inquiries:
 - Visit: https://falcons.ai/ for more information.
-- Model Repository: huggingface.co/falcons-ai/nsfw-classifier
+- Model Repository: https://huggingface.co/Falconsai/nsfw_image_detection
 
 ## License
 
