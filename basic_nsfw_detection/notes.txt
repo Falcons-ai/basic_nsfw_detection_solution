@@ -1,0 +1,12 @@
+pip install flask transformers torch pillow
+
+
+Once everything is set up, run the Flask app with:
+
+python app.py
+Then, open http://127.0.0.1:5000/ in your browser to:
+✅ Upload images
+✅ Automatically scan for NSFW content
+✅ Display images in a feed with NSFW-marking
+
+

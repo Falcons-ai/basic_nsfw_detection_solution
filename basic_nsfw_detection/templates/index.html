@@ -1,0 +1,109 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NSFW IMAGE DETECTION</title>
+    <!-- Include Bootstrap CSS for responsive design and basic styling -->
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <!-- Include our custom CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script>
+        /**
+        
+         * Automatically submits the form when a file is selected
+         * Uses Fetch API for asynchronous upload
+         */
+        function autoSubmit() {
+            // Create a FormData object from the upload form
+            let formData = new FormData(document.getElementById("upload-form"));
+            
+            // Send POST request to server
+            fetch("/", {
+                method: "POST",
+                body: formData
+            }).then(response => {
+                // Check if the response is successful
+                if (response.ok) {
+                    return response.text();
+                }
+                throw new Error('Upload failed');
+            }).then(() => {
+                // Reload the page to show the new image
+                location.reload();
+            }).catch(error => {
+                // Log any errors that occur during upload
+                console.error("Upload failed:", error);
+                alert("Upload failed. Please try again.");
+            });
+        }
+    </script>
+</head>
+<body class="bg-light">
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">NSFW IMAGE DETECTION</a>
+        </div>
+    </nav>
+    
+    <!-- Main content container -->
+    <div class="container mt-4">
+        <!-- Upload form section -->
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <!-- Card containing the upload form -->
+                <div class="card p-3">
+                    <form id="upload-form" action="/" method="post" enctype="multipart/form-data">
+                        <!-- Text input for image caption -->
+                        <textarea 
+                            class="form-control mb-2" 
+                            name="caption" 
+                            placeholder="What's happening?" 
+                            required
+                        ></textarea>
+                        <!-- File input for image upload -->
+                        <input 
+                            class="form-control" 
+                            type="file" 
+                            name="file" 
+                            accept="image/*" 
+                            onchange="autoSubmit()" 
+                            required
+                        >
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Image feed section -->
+        <div class="row justify-content-center mt-4">
+            <div class="col-md-6">
+                <!-- Loop through each image in the feed -->
+                {% for image in feed %}
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <!-- Image container with conditional NSFW class -->
+                        <div class="image-container {% if image.is_nsfw %}nsfw-image{% endif %}">
+                            <img 
+                                src="{{ image.url }}" 
+                                class="img-fluid rounded" 
+                                alt="Uploaded Image"
+                            >
+                        </div>
+                        <!-- Caption display below the image -->
+                        <p class="card-text mt-3">{{ image.caption }}</p>
+                        <!-- Timestamp display -->
+                        <small class="text-muted">{{ image.timestamp }}</small>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    
+    <!-- Include Bootstrap JavaScript bundle -->
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+</body>
+</html>
