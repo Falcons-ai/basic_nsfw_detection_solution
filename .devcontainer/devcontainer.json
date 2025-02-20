@@ -1,0 +1,26 @@
+{
+    "name": "Falcons.ai NSFW Detection Quickstart",
+    "image": "mcr.microsoft.com/devcontainers/python:3",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "eamodio.gitlens",
+                "VisualStudioExptTeam.vscodeintellicode",
+                "usernamehw.errorlens",
+                "aaron-bond.better-comments"
+            ]
+        },
+        "codespaces": {
+            "openFiles": ["README.md"]
+        }
+    },
+    "forwardPorts": [5000],
+    "portsAttributes": {
+        "5000": {
+            "label": "Flask App",
+            "onAutoForward": "notify"
+        }
+    },
+    "postCreateCommand": "pip install -r /workspaces/basic_nsfw_detection_solution/basic_nsfw_detection/requirements.txt && mkdir -p basic_nsfw_detection/media && mkdir -p basic_nsfw_detection/static/css"
+}
