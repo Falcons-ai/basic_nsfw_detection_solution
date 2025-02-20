@@ -1,5 +1,7 @@
 # Basic NSFW Image Detection by FALCONS.AI
 
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/Falcons-ai/basic_nsfw_detection_solution)
+
 Copyright © 2025 FALCONS.AI. All rights reserved.
 <!-- PROJECT LOGO -->
 <br />
