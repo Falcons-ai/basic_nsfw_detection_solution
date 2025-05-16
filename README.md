@@ -17,7 +17,7 @@ This repo is designed as a fast start to any developer to build a personal NSFW 
 
 | ![Upload Interface](assets/1.png) | ![NSFW Detection](assets/2.png) |
 |:--------------------------------:|:-------------------------------:|
-| ![Image Feed](assets/3.png) | ![Moderation View](assets/4.png) |
+
 
 *Each interface component is designed for simplicity and ease of use while maintaining robust functionality.*
 
